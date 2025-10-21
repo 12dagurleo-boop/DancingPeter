@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fruits vs Brainrots</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('https://cdn-0001.qstv.on.epicgames.com/srHLxoyxxqmWUdEPAu/image/lobby.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+    }
+    .left, .right {
+      padding: 20px;
+    }
+    .left {
+      width: 50%;
+    }
+    .right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .creator {
+      color: #ffe74c;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 20px;
+      text-decoration: none;
+    }
+    .tags {
+      margin-bottom: 20px;
+    }
+    .tag {
+      display: inline-block;
+      background: #222;
+      padding: 5px 12px;
+      margin-right: 5px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .desc {
+      font-size: 15px;
+      line-height: 1.6;
+      white-space: pre-line;
+      margin-bottom: 15px;
+    }
+    .more {
+      color: #4fc3f7;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .info {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: #ccc;
+    }
+    .info-group {
+      width: 48%;
+    }
+    .info-group div {
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    .btn-play {
+      margin-top: 20px;
+      background: #ffe74c;
+      border: none;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: inline-block;
+    }
+    .copy-code {
+      background: #333;
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .footer {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .footer span {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+    .thumbnail {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    hr {
+      margin: 30px 0;
+      border: none;
+      border-top: 1px solid #888;
+    }
+    .popup, .abuse-page, .install-tutorial {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup-inner, .abuse-inner, .tutorial-inner {
+      background: #111;
+      padding: 30px;
+      border-radius: 12px;
+      color: white;
+      text-align: center;
+      max-width: 400px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .popup-inner button, .abuse-inner button, .tutorial-inner button {
+      margin: 10px 5px 0 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .popup-inner .cancel, .abuse-inner .close-abuse, .tutorial-inner .close-tutorial {
+      background: #555;
+      color: white;
+    }
+    .popup-inner .ok, .abuse-inner .remind-me, .tutorial-inner .ok {
+      background: #4fc3f7;
+      color: white;
+    }
+    .abuse-list {
+      text-align: left;
+      margin-top: 15px;
+      list-style: none;
+      padding: 0;
+    }
+    .abuse-list li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .tutorial-images img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px 0;
+    }
+    .bottom-buttons {
+      margin-top: 25px;
+    }
+    .bottom-buttons .btn-play {
+      width: 100%;
+      text-align: center;
+    }
+    .bottom-buttons .copy-code {
+      margin-top: 10px;
+      width: fit-content;
+    }
+    .bottom-buttons .footer {
+      margin-top: 15px;
+      justify-content: start;
+      gap: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left">
+    <h1>FRUITS VS BRAINROTS</h1>
+    <a class="creator" href="https://fortnite.gg/creator?name=pandvil" target="_blank">By pandvil</a>
+
+    <div class="tags">
+      <span class="tag">TYCOON</span>
+      <span class="tag">CASUAL</span>
+      <span class="tag">SIMULATOR</span>
+      <span class="tag">JUST FOR FUN</span>
+    </div>
+
+    <div class="desc" id="desc">
+    🍉 Fruits Vs Brainrots
+
+      🌱 Buy seeds & plant fruits in your garden!
+      <span class="more" onclick="toggleDesc()">...more</span>
+    </div>
+
+    <div class="info">
+      <div class="info-group">
+        <div><strong>CREATED IN:</strong> UEFN</div>
+        <div><strong>RELEASE DATE:</strong> Sep 29, 2025</div>
+        <div><strong>LAST UPDATE:</strong> Oct 20, 2025</div>
+      </div>
+      <div class="info-group">
+        <div><strong>MAX PLAYERS:</strong> 4</div>
+        <div><strong>AGE RATING:</strong> Teen / 12</div>
+        <div><strong>XP STATUS:</strong> Awarding XP</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="bottom-buttons">
+      <button class="btn-play" onclick="window.open('https://www.fortnite.com/play/island/4554-4413-1515', '_blank')">PLAY NOW</button>
+      <div class="copy-code" onclick="copyCode()">4554-4413-1515</div>
+
+      <div class="footer">
+        <span onclick="shareLink()">🔗 Share</span>
+        <span onclick="showAdminAbuse()">⚠️ Admin Abuses</span>
+        <span onclick="showPopup()">🌐 Fortnite.com</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <img class="thumbnail" src="https://cdn-0001.qstv.on.epicgames.com/tHFEnrksJlXxmnoWSY/image/landscape_comp.jpeg" alt="Thumbnail" />
+  </div>
+</div>
+
+<!-- POPUP FOR FORTNITE.COM LINK -->
+<div class="popup" id="popup">
+  <div class="popup-inner">
+    <p>Which one do you wanna go to?</p>
+    <p>Press Cancel to go to Fortnite.com<br />(https://www.fortnite.com/@pandvil/4554-4413-1515?lang=en-US)</p>
+    <p>Press OK to go to Fortnite.gg<br />(https://fortnite.gg/island?code=4554-4413-1515)</p>
+    <button class="ok" onclick="window.location.href='https://fortnite.gg/island?code=4554-4413-1515'">OK</button>
+    <button class="cancel" onclick="window.location.href='https://www.fortnite.com/@pandvil/4554-4413-1515?lang=en-US'">Cancel</button>
+  </div>
+</div>
+
+<!-- ADMIN ABUSE PAGE -->
+<div class="abuse-page" id="abusePage">
+  <div class="abuse-inner">
+    <h2>Scheduled Admin Abuses</h2>
+    <ul class="abuse-list">
+      <li>🧠 2x Brainrot Damage – Oct 22 @ 3PM</li>
+      <li>💸 Free 10K Coins – Oct 23 @ 1PM</li>
+      <li>🌟 Super Fruit Spawn – Oct 25 @ 6PM</li>
+    </ul>
+    <button class="remind-me" onclick="requestNotificationPermission()">🔔 Remind Me</button>
+    <button class="close-abuse" onclick="closeAdminAbuse()">Close</button>
+  </div>
+</div>
+
+<!-- INSTALL TUTORIAL PAGE -->
+<div class="install-tutorial" id="installTutorial">
+  <div class="tutorial-inner">
+    <h2>Required to Install the App</h2>
+    <p>To use Admin Abuse reminders, please install this website as an app on your device.</p>
+    <p>Follow the steps below:</p>
+    <div class="tutorial-images">
+      <img src="https://via.placeholder.com/350x600?text=Step+1" alt="Step 1: Open browser menu" />
+      <img src="https://via.placeholder.com/350x600?text=Step+2" alt="Step 2: Click Install App" />
+      <img src="https://via.placeholder.com/350x600?text=Step+3" alt="Step 3: Confirm installation" />
+      <img src="https://via.placeholder.com/350x600?text=Step+4" alt="Step 4: Open app from home screen" />
+    </div>
+    <button class="close-tutorial" onclick="closeInstallTutorial()">Close</button>
+  </div>
+</div>
+
+<script>
+  let isExpanded = false;
+  function toggleDesc() {
+    const desc = document.getElementById("desc");
+    if (!isExpanded) {
+      desc.innerHTML = `🍉 Fruits Vs Brainrots
+
+🌱 Buy seeds & plant fruits in your garden!
+🥭 Fight alongside your fruits against the brainrots!
+🍄 Flex your brainrots and fruit garden!
+💸 Earn money and grow offline!
+👥 Play with friends!
+
+Parody of Plants vs Brainrots
+
+🌱 Buy seeds & plant your fruit in your garden!
+🍉 Fight alongside your fruits against the brainrots!
+💸 Earn money and grow offline!`;
+      isExpanded = true;
+    }
+  }
+
+  function copyCode() {
+    navigator.clipboard.writeText("4554-4413-1515").then(() => {
+      alert("Copied: 4554-4413-1515");
+    });
+  }
+
+  function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function shareLink() {
+    if (navigator.share) {
+      navigator.share({
+        title: "Fruits Vs Brainrots",
+        url: "https://bit.ly/FruitsVBrainrot"
+      }).catch(console.error);
+    } else {
+      alert("Sharing not supported on this browser.");
+    }
+  }
+
+  // Detect if running as installed PWA or in browser tab
+  function isStandalone() {
+    return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  }
+
+  // Show Admin Abuse page or tutorial based on standalone mode
+  function showAdminAbuse() {
+    if (isStandalone()) {
+      // Show real admin abuse page with reminders
+      document.getElementById('abusePage').style.display = 'flex';
+      requestNotificationPermission();
+    } else {
+      // Show install tutorial
+      document.getElementById('installTutorial').style.display = 'flex';
+    }
+  }
+
+  function closeAdminAbuse() {
+    document.getElementById('abusePage').style.display = 'none';
+  }
+
+  function closeInstallTutorial() {
+    document.getElementById('installTutorial').style.display = 'none';
+  }
+
+  // Notifications & Reminder logic
+  function requestNotificationPermission() {
+    if (!('Notification' in window)) {
+      alert('This browser does not support notifications.');
+      return;
+    }
+
+    if (Notification.permission === 'granted') {
+      scheduleReminder();
+    } else if (Notification.permission !== 'denied') {
+      Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+          scheduleReminder();
+        } else {
+          alert('Notification permission denied.');
+        }
+      });
+    } else {
+      alert('Notification permission denied.');
+    }
+  }
+
+  // Demo reminder schedule
+  function scheduleReminder() {
+    alert('Reminder set! You will be notified about admin abuses.');
+    // Here you could integrate with Service Workers or background notification API for real reminders.
+    // For now, this is just a placeholder.
+  }
+</script>
+</body>
+</html>
