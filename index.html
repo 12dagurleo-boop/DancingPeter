@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fruits vs Brainrots</title>
+  <title>DANCING PETER!</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('https://cdn-0001.qstv.on.epicgames.com/srHLxoyxxqmWUdEPAu/image/lobby.jpeg');
+      background-image: url('https://cdn-0001.qstv.on.epicgames.com/ItlGTREWPpJWkcyPob/image/landscape_comp.jpeg');
       background-size: cover;
       background-position: center;
       color: white;
@@ -195,20 +195,20 @@
 
 <div class="container">
   <div class="left">
-    <h1>FRUITS VS BRAINROTS</h1>
-    <a class="creator" href="https://fortnite.gg/creator?name=pandvil" target="_blank">By pandvil</a>
+    <h1>Dancing Family Guy</h1>
+    <a class="creator" href="https://fortnite.gg/creator?name=daxipaxi" target="_blank">By DaxiPaxi</a>
 
     <div class="tags">
-      <span class="tag">TYCOON</span>
-      <span class="tag">CASUAL</span>
-      <span class="tag">SIMULATOR</span>
       <span class="tag">JUST FOR FUN</span>
+      <span class="tag">SHOW</span>
+      <span class="tag">FUNNY</span>
+      <span class="tag">MEMES</span>
     </div>
 
     <div class="desc" id="desc">
-    🍉 Fruits Vs Brainrots
+     Dancing Family Guy
 
-      🌱 Buy seeds & plant fruits in your garden!
+       Peter Griffin showing his talented dance moves !
       <span class="more" onclick="toggleDesc()">...more</span>
     </div>
 
@@ -219,8 +219,8 @@
         <div><strong>LAST UPDATE:</strong> Oct 20, 2025</div>
       </div>
       <div class="info-group">
-        <div><strong>MAX PLAYERS:</strong> 4</div>
-        <div><strong>AGE RATING:</strong> Teen / 12</div>
+        <div><strong>MAX PLAYERS:</strong> 16</div>
+        <div><strong>AGE RATING:</strong> Everyone / 3</div>
         <div><strong>XP STATUS:</strong> Awarding XP</div>
       </div>
     </div>
@@ -228,19 +228,19 @@
     <hr>
 
     <div class="bottom-buttons">
-      <button class="btn-play" onclick="window.open('https://www.fortnite.com/play/island/4554-4413-1515', '_blank')">PLAY NOW</button>
-      <div class="copy-code" onclick="copyCode()">4554-4413-1515</div>
+      <button class="btn-play" onclick="window.open('https://fortnite.com/play/island/1249-3448-5110', '_blank')">PLAY NOW</button>
+      <div class="copy-code" onclick="copyCode()">1249-3448-5110</div>
 
       <div class="footer">
         <span onclick="shareLink()">🔗 Share</span>
-        <span onclick="showAdminAbuse()">⚠️ Admin Abuses</span>
+        <span onclick="showAdminAbuse()">⚠️ PEGI Info</span>
         <span onclick="showPopup()">🌐 Fortnite.com</span>
       </div>
     </div>
   </div>
 
   <div class="right">
-    <img class="thumbnail" src="https://cdn-0001.qstv.on.epicgames.com/tHFEnrksJlXxmnoWSY/image/landscape_comp.jpeg" alt="Thumbnail" />
+    <img class="thumbnail" src="https://cdn-0001.qstv.on.epicgames.com/ItlGTREWPpJWkcyPob/image/landscape_comp.jpeg" alt="Thumbnail" />
   </div>
 </div>
 
@@ -250,8 +250,8 @@
     <p>Which one do you wanna go to?</p>
     <p>Press Cancel to go to Fortnite.com<br />(https://www.fortnite.com/@pandvil/4554-4413-1515?lang=en-US)</p>
     <p>Press OK to go to Fortnite.gg<br />(https://fortnite.gg/island?code=4554-4413-1515)</p>
-    <button class="ok" onclick="window.location.href='https://fortnite.gg/island?code=4554-4413-1515'">OK</button>
-    <button class="cancel" onclick="window.location.href='https://www.fortnite.com/@pandvil/4554-4413-1515?lang=en-US'">Cancel</button>
+    <button class="ok" onclick="window.location.href='https://www.fortnite.com/creative/island-codes/1249-3448-5110'">OK</button>
+    <button class="cancel" onclick="window.location.href='https://fortnite.gg/island?code=1249-3448-5110'">Cancel</button>
   </div>
 </div>
 
@@ -290,26 +290,22 @@
   function toggleDesc() {
     const desc = document.getElementById("desc");
     if (!isExpanded) {
-      desc.innerHTML = `🍉 Fruits Vs Brainrots
+      desc.innerHTML = ` Dancing Family Guy
 
-🌱 Buy seeds & plant fruits in your garden!
-🥭 Fight alongside your fruits against the brainrots!
-🍄 Flex your brainrots and fruit garden!
-💸 Earn money and grow offline!
-👥 Play with friends!
+Peter Griffin showing his talented dance moves !
 
-Parody of Plants vs Brainrots
+COMING SOON! - Explore the Family Guy House!
 
-🌱 Buy seeds & plant your fruit in your garden!
-🍉 Fight alongside your fruits against the brainrots!
-💸 Earn money and grow offline!`;
+Have fun!
+Have fun!
+Have fun!`;
       isExpanded = true;
     }
   }
 
   function copyCode() {
-    navigator.clipboard.writeText("4554-4413-1515").then(() => {
-      alert("Copied: 4554-4413-1515");
+    navigator.clipboard.writeText("1249-3448-5110").then(() => {
+      alert("Copied: 1249-3448-5110");
     });
   }
 
@@ -320,8 +316,8 @@ Parody of Plants vs Brainrots
   function shareLink() {
     if (navigator.share) {
       navigator.share({
-        title: "Fruits Vs Brainrots",
-        url: "https://bit.ly/FruitsVBrainrot"
+        title: "Dancing Family Guy",
+        url: "https://bit.ly/DancingPeter"
       }).catch(console.error);
     } else {
       alert("Sharing not supported on this browser.");
@@ -384,3 +380,4 @@ Parody of Plants vs Brainrots
 </script>
 </body>
 </html>
+
